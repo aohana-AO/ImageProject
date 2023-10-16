@@ -77,3 +77,8 @@ http://127.0.0.1:8000/
 pip freeze > requirements.txt
 
 ```
+
+
+# 参考URL
+#### チーム開発notion
+https://chiseled-firewall-4a8.notion.site/8b240a432b514a5c8ff12b9a6d4fcc03
