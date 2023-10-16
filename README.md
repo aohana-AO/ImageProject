@@ -1,5 +1,6 @@
 # 概要
 AIシステム開発授業_画像生成チームリポジトリ。
+<br>
 
 ## 構築手順
 #### ①こちらのリポジトリをクローンする。
@@ -9,6 +10,8 @@ AIシステム開発授業_画像生成チームリポジトリ。
 ```
 git clone https://github.com/aohana-AO/Image_Create_Project.git
 ```
+<br>
+
 
 #### ②ローカルにもってこれたらrequirements.txt内のライブラリをインストールする
 requirements.txtとは、使用する追加ライブラリやバージョンの記載場所になります。
@@ -17,6 +20,7 @@ requirements.txtとは、使用する追加ライブラリやバージョンの�
 ```
 pip install -r requirements.txt
 ```
+<br>
 
 #### ③データベースのマイグレート
 マイグレーションファイルを作成。modelsに変更がなければNo changes detectedとなるかも
@@ -28,6 +32,7 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
+<br>
 
 #### ④.envを作成
 DjangoやAPIを使うとき、key(秘密の鍵)と言うものが必要になったりします。
@@ -42,22 +47,25 @@ DjangoやAPIを使うとき、key(秘密の鍵)と言うものが必要になっ
 ↓
 チームから共有されたkeyをその中に貼り付け。
 ```
-
+<br>
 
 #### ⑤スーパーユーザー作成
 ```
 python manage.py createsuperuser --noinput --username superuser
 ```
+<br>
 
 #### ⑥以下のコマンドでサーバーを動かす
 ```
 python manage.py runserver
 ```
+<br>
 
 #### ⑦ローカルアクセス
-以下にアクセス。するとローカルで立ち上げられます
+以下にアクセス。するとローカルでサーバーを立ち上げられます
 http://127.0.0.1:8000/
 
+<br>
 
 #### ⑧ライブラリなど追加インストールした場合
 ライブラリの追加インストールをした場合、他のチームメンバーはまだそのライブラリを入れてないので、requirements.txtを更新し共有する必要が出てきます。
