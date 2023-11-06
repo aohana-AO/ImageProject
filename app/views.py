@@ -7,12 +7,17 @@ import base64
 import os
 import requests
 import time
-
+import environ
 
 def image_create(prompt, image_name):
     engine_id = "stable-diffusion-xl-beta-v2-2-2"
     api_host = os.getenv('API_HOST', 'https://api.stability.ai')
-    api_key = "sk-tYk6w9Fme97inuhtUIHXkbNlsrjQoI5GKjJWaN2qCHwmrWy3"
+    env = environ.Env()
+    env.read_env('.env')
+    SECRET_KEY = env('SECRET_KEY')
+    print(SECRET_KEY)
+    print('-----')
+    api_key = env('IMAGE_API_KEY')
 
     # API Keyの取得確認
     if api_key is None:
