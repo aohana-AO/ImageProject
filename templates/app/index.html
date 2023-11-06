@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="ja">
 
 <head>
@@ -34,19 +35,31 @@
   </header>
 
   <div class="sidebar sidebar-left">
-    <div class="prompt">Prompt</div> <!-- Prompt を追加 -->
-      <textarea class="sidebar-textarea" id=Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-    <div class="prompt">Negativ Prompt</div> <!-- Prompt を追加 -->
-      <textarea class="sidebar-textarea" id=Negativ_Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-    <button id="submit-button">送信</button> <!-- ボタンを追加 -->
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <div class="prompt">Prompt</div>
+        <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+
+        <button id="submit-button" type="submit">送信</button>
+    </form>
   </div>
 
  <div class="content">
     <!-- メインコンテンツ -->
 
-    <!-- Canvas要素を追加 -->
-    <canvas id="myCanvas" width="800" height="500" ></canvas>
+<div class="image-center">
+    <img src="{{ image_name }}">
+</div>
+
+    <!-- Canvas要素を追加
+     <canvas id="myCanvas" width="800" height="500" ></canvas>
+     {% if image_name %}
+     <script>
+    var imageUrl = "{% static image_url %}";
+    </script>
+     {% endif %}
     <script src="{% static 'js/canvas.js' %}"></script>
+     -->
 
   </div>
 
