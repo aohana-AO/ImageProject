@@ -11,6 +11,7 @@
 
     // Canvasの初期描画
     drawRectangle();
+    drawImageOnCanvas();
 
     // マウススクロールイベントをキャプチャ
     canvas.addEventListener("wheel", function (event) {
@@ -83,3 +84,12 @@
       }
     }
   }
+      // イメージをCanvasに描画する関数
+    function drawImageOnCanvas() {
+        var img = new Image();
+        img.onload = function() {
+            // 画像をCanvasのサイズに合わせて描画
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+        img.src = imageUrl;
+    }
