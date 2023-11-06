@@ -1,7 +1,63 @@
-Hello Image Create !!
-<hr>
-{% for i in list %}
-	{{ i }}
-    <br>
-{% endfor %}
+<html lang="ja">
 
+<head>
+  {% load static %}
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="{% static 'css/canvas.css' %}">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="header-logo">
+      <img src="static/img/totoro_rogo.png" alt="Your Logo" class="logo-image">
+    </div>
+
+    <div class="navtext-container">
+      <div class="navtext">company</div>
+    </div>
+
+    <div class="center-container">
+      <div class="button-container">
+        <button class="header-button">Button 1</button>
+        <button class="header-button">Button 2</button>
+        <button class="header-button">Button 3</button>
+        <button class="header-button">Button 4</button>
+      </div>
+    </div>
+
+    <div class="login-container">
+      <button class="login-btn" onclick="showLogin()">Login</button>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <div class="sidebar sidebar-left">
+    <div class="prompt">Prompt</div> <!-- Prompt を追加 -->
+      <textarea class="sidebar-textarea" id=Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+    <div class="prompt">Negativ Prompt</div> <!-- Prompt を追加 -->
+      <textarea class="sidebar-textarea" id=Negativ_Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+    <button id="submit-button">送信</button> <!-- ボタンを追加 -->
+  </div>
+
+ <div class="content">
+    <!-- メインコンテンツ -->
+
+    <!-- Canvas要素を追加 -->
+    <canvas id="myCanvas" width="800" height="500" ></canvas>
+    <script src="{% static 'js/canvas.js' %}"></script>
+
+  </div>
+
+  <div class="sidebar sidebar-right">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+    <a href="#">Option 4</a>
+  </div>
+
+
+</body>
+
+</html>
