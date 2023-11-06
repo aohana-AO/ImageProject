@@ -19,7 +19,7 @@ class Image(models.Model):
     imageID = models.AutoField(primary_key=True)
     user_ID = models.ForeignKey(User, on_delete=models.CASCADE)
     category_ID = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image_path = models.ImageField(upload_to='images/')  # 画像を保存するディレクトリを指定
+    image_path = models.ImageField(upload_to='img/')  # 画像を保存するディレクトリを指定
 
     def __str__(self):
         return f"Image {self.imageID} - User: {self.user_ID}, Category: {self.category_ID}"
