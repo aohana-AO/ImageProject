@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             name='Image',
             fields=[
                 ('imageID', models.AutoField(primary_key=True, serialize=False)),
-                ('image_path', models.ImageField(upload_to='images/')),
+                ('image_path', models.ImageField(upload_to='img/')),
                 ('category_ID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.category')),
                 ('user_ID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

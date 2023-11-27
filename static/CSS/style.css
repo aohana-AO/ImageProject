@@ -225,3 +225,14 @@ body {
 #submit-button:hover {
   background-color: #7550B1; /* ホバー時の背景色を変更 */
 }
+.image-center {
+    display: flex;
+    justify-content: center;  /* 水平方向の中央揃え */
+    align-items: center;      /* 垂直方向の中央揃え */
+    height: 100vh;            /* 画面の高さ全体を使用 */
+}
+
+.image-center img {
+    max-width: 100%;          /* 画像がコンテナより大きい場合、画像のサイズを調整 */
+    max-height: 100%;         /* 同上 */
+}
