@@ -1,9 +1,12 @@
+{% load static %}
 <html lang="ja">
 
 <head>
   {% load static %}
    <link rel="stylesheet" href="{% static 'css/style.css' %}">
    <link rel="stylesheet" href="{% static 'css/canvas.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="history.js"></script>
 </head>
 
 <body>
@@ -34,19 +37,42 @@
   </header>
 
   <div class="sidebar sidebar-left">
-    <div class="prompt">Prompt</div> <!-- Prompt を追加 -->
-      <textarea class="sidebar-textarea" id=Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-    <div class="prompt">Negativ Prompt</div> <!-- Prompt を追加 -->
-      <textarea class="sidebar-textarea" id=Negativ_Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-    <button id="submit-button">送信</button> <!-- ボタンを追加 -->
+
+        <button id="choose-style-button">履歴　　　　　　　　　　　　　　　　　　　　　　　　＞</button>
+
+
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <div class="prompt">Prompt</div>
+        <div class="textarea-container">
+            <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+            <button id="save-button"></button>
+        </div>
+          <div class="prompt">Negativ Prompt</div> <!-- Prompt を追加 -->
+            <textarea class="sidebar-textarea" id=Negativ_Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+            <button id="submit-button" type="submit">送信</button>
+      </form>
+
   </div>
 
  <div class="content">
     <!-- メインコンテンツ -->
+ <ul id="content-list"style="display: none;"></ul>
 
-    <!-- Canvas要素を追加 -->
-    <canvas id="myCanvas" width="800" height="500" ></canvas>
+<div class="image-center">
+    <img src="{{ image_name }}">
+</div>
+
+    <!-- Canvas要素を追加
+     <canvas id="myCanvas" width="800" height="500" ></canvas>
+     {% if image_name %}
+     <script>
+    var imageUrl = "{% static image_url %}";
+    </script>
+     {% endif %}
     <script src="{% static 'js/canvas.js' %}"></script>
+
+     -->
 
   </div>
 

@@ -1,14 +1,18 @@
 body {
   margin: 0;
   font-family: "Futura", Helvetica, sans-serif;
-  background-color: #0F1111; /*背景色が設定されていないところは自動的にこの色になる*/
+  background-color: #0f1111; /*背景色が設定されていないところは自動的にこの色になる*/
 }
+
+
+
 /* Navbar & Navmenu color */
 :root {
   --background-navbar: rgba(55, 55, 55, 1.00);
 }
+
 .header {
-  background: #0F1419; /* 背景色を黒に設定 */
+  background: #0f1419; /* 背景色を黒に設定 */
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -18,6 +22,7 @@ body {
   align-items: center;
   border-bottom: 2px solid rgb(109, 108, 108); /* 白い線を追加 */
 }
+
 .header-logo {
   margin-left: 10px; /* ロゴの左側の余白を設定 */
 }
@@ -25,13 +30,15 @@ body {
   width: 40px; /* ロゴの幅を設定 */
   height: auto; /* アスペクト比を保つための自動高さ */
 }
+
 .login-container {
   margin-right: 20px;
   margin-left: auto;
 }
+
 .login-btn,
 .logout-btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -43,13 +50,16 @@ body {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
+
 .login-btn:hover,
 .logout-btn:hover {
-  background-color: #45A049;
+  background-color: #45a049;
 }
+
 .logout-btn {
   display: inline-block;
 }
+
 .navtext-container {
   width: 100%;
   height: 52px;
@@ -59,6 +69,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .navtext {
   position: absolute;
   text-transform: uppercase;
@@ -78,6 +89,7 @@ body {
   overflow-x: hidden;
   padding-top: 100px;
 }
+
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -86,15 +98,18 @@ body {
   display: block;
   transition: 0.3s;
 }
+
 .sidebar a:hover {
-  background-color: #45A049;
+  background-color: #45a049;
   color: white;
 }
+
 .sidebar a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 /* left-sidebar.css */
+
 .sidebar.sidebar-left {
   height: 100%;
   width: 400px;
@@ -103,11 +118,12 @@ body {
   top: 0;
   right: auto;
   left: 0;
-  background-color: #0F1419;
+  background-color: #0f1419;
   overflow-x: hidden;
   padding-top: 100px;
   border-right: 1px solid rgb(109, 108, 108);
 }.
+
 .sidebar.sidebar-left a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -116,15 +132,19 @@ body {
   display: block;
   transition: 0.3s;
 }
+
 .sidebar.sidebar-left a:hover {
-  background-color: #45A049;
+  background-color: #45a049;
   color: white;
 }
+
 .sidebar.sidebar-left a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
+
 /* right-sidebar.css */
+
 .sidebar.sidebar-right {
   height: 100%;
   width: 400px;
@@ -133,11 +153,13 @@ body {
   top: 0;
   left: auto;
   right: 0;
-  background-color: #0F1419;
+  background-color: #0f1419;
   overflow-x: hidden;
   padding-top: 100px;
   border-left: 1px solid rgb(109, 108, 108);
 }
+
+
 .sidebar.sidebar-right a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -146,14 +168,17 @@ body {
   display: block;
   transition: 0.3s;
 }
+
 .sidebar.sidebar-right a:hover {
-  background-color: #45A049;
+  background-color: #45a049;
   color: white;
 }
+
 .sidebar.sidebar-right a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
+
 .content {
   margin-left: 400px; /* サイドバーの幅 + マージン */
   margin-right: 400px; /* サイドバーの幅 + マージン */
@@ -165,6 +190,24 @@ body {
   display: flex;
   justify-content: center;
 }
+#content-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+  background-color: rgba(192, 192, 192, 0.7); /* 灰色の背景色を設定 */
+  border-radius: 5px; /* 角丸を追加 */
+  padding: 10px; /* 内側の余白を設定 */
+  z-index: 3;
+  position: absolute;
+}
+
+#content-list li {
+  margin-bottom: 10px;
+  color: white; /* リストアイテムの文字色を白に設定 */
+}
+
+
+
 .textContent{
 }
 /*textContentクラスのdivに囲まれたpタグにはこの属性を付与する*/
@@ -174,9 +217,10 @@ body {
     overflow: auto;
     color: white;
 }
+
 .button-container {
   position: absolute;
-  bottom: 10px; /* ä¸‹å´ã‹ã‚‰ã®è·é›¢ã‚’èª¿æ•´ */
+  bottom: 10px; /* ä¸‹å´ã‹ã‚‰ã®è·é›¢ã‚'èª¿æ•´ */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -194,34 +238,90 @@ body {
   margin: 0 1px;
   transition: background-color 0.3s;
 }
+
 .header-button:hover {
   background-color: #005F7D;
+}
+.textarea-container {
+  position: relative;
 }
 .sidebar-textarea {
   background-color: rgb(43, 42, 42); /* グレーの背景色を設定 */
   border: none; /* ボーダーを削除 */
   padding: 10px; /* テキストエリア内の余白を設定 */
-  width: 90%; /* テキストエリアの幅を100%に設定 */
+  width: calc(100% - 20px);
   box-sizing: border-box; /* ボックスサイズを境界ボックスに設定 */
   resize: none; /* テキストエリアのリサイズを無効にする */
   margin-left: 10px; /* 左側にもマージンを追加 */
   border-radius: 5px; /* 丸みをつける */
   border: 1px solid rgb(109, 108, 108); /* 細い白い枠線を追加 */
-  color: white;
+  color: white; /* テキストの色を白に設定 */
+  position: relative;
 }
+
+#save-button {
+  background-color: transparent;
+  color: rgb(100, 87, 87);
+  border: none;
+  padding: 0px;
+  position: absolute;
+
+  top: 10px; /* 上方向の位置調整 */
+  right: 20px; /* 右方向の位置調整 */
+  ;
+}
+#save-button:before {
+  content: '\f0c7'; /* FontAwesomeのSaveアイコンのUnicodeを指定 */
+  font-family: 'Font Awesome 5 Free'; /* FontAwesomeのフォントファミリーを指定 */
+  font-weight: 900; /* フォントの太さを指定 (必要に応じて調整) */
+  font-size: 30px; /* フォントサイズを指定 (必要に応じて調整) */
+  color: rgb(168, 164, 164); /* アイコンの色を指定 */
+  transition: color 0.3s; /* 色のトランジション効果を追加 */
+}
+
+#save-button:hover:before {
+  color: rgb(235, 232, 232); /* ホバー時のアイコンの色を指定 */
+}
+
+
+
+
+
 .prompt {
   color: white; /* テキストの色を白に設定 */
   margin-left: 10px; /* 左側にもマージンを追加 */
 }
+
 #submit-button {
-  background-color: #5D2CAC; /* より濃い青色の背景色を設定 */
+  background-color: #5d2cac; /* より濃い青色の背景色を設定 */
   color: white;
   border: none;
-  padding: 10px 166px;
+  padding: 10px 176px;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px; /* ボタンの上下のマージンを設定 */
 }
+
 #submit-button:hover {
-  background-color: #7550B1; /* ホバー時の背景色を変更 */
+  background-color: #7550b1; /* ホバー時の背景色を変更 */
+}
+
+
+#choose-style-button {
+  background-color: transparent; /* 背景色を透明に設定 */
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 95%;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+#choose-style-button:hover {
+  background-color: transparent;
+  border: 1px solid white;
 }
