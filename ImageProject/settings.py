@@ -32,6 +32,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'login',
+    'django.contrib.sites',  # 追加
+    'allauth',  # 追加
+    'allauth.account',  # 追加
+    'allauth.socialaccount',  # 追加
+    'allauth.socialaccount.providers.line',  # 追加
+    'allauth.socialaccount.providers.google', # 追加
 ]
 
 MIDDLEWARE = [
@@ -42,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'ImageProject.urls'
@@ -120,3 +128,27 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+######################################
+# Authentication                     #
+######################################
+
+# Don't forget this little dude.
+SITE_ID = 1
+
+# ログインのリダイレクトURL
+LOGIN_REDIRECT_URL = 'app/'
+
+# ログアウトのリダイレクトURL
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SOCIALACCOUNT_PROVIDERS = {
+    'line': {
+        'SCOPE': ['profile','openid'],
+    }
+}
