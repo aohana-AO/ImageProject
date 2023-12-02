@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="バージョン管理外ファイルコミット対比">
+      <change beforePath="$PROJECT_DIR$/.idea/ImageProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ImageProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/accounts" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2WpNDRq97vTA8cgKUihbFPVIpIR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/accounts",
+    "last_opened_file_path": "/Users/aoiyamada/PycharmProjects/ImageProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ImageProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ImageProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="ImageProject.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../ImageCreateProject/env/venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.9 (ImageCreateProject) (2)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="デフォルトタスク">
+      <changelist id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="" />
+      <created>1697425442863</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697425442863</updated>
+      <workItem from="1697425446430" duration="1229000" />
+      <workItem from="1697426680609" duration="85000" />
+      <workItem from="1697430674247" duration="3734000" />
+      <workItem from="1697458237179" duration="33000" />
+      <workItem from="1697458312628" duration="441000" />
+      <workItem from="1698023676934" duration="3684000" />
+      <workItem from="1699233792967" duration="827000" />
+      <workItem from="1699234857812" duration="979000" />
+      <workItem from="1699236227740" duration="610000" />
+      <workItem from="1701047505107" duration="42000" />
+      <workItem from="1701047561587" duration="7047000" />
+    </task>
+    <task id="LOCAL-00001" summary="django構築+key除外">
+      <option name="closed" value="true" />
+      <created>1697425710956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697425710956</updated>
+    </task>
+    <task id="LOCAL-00002" summary="README作成">
+      <option name="closed" value="true" />
+      <created>1697425722021</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697425722021</updated>
+    </task>
+    <task id="LOCAL-00003" summary="README回生上げるため改行複数追加更新">
+      <option name="closed" value="true" />
+      <created>1697425926800</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697425926800</updated>
+    </task>
+    <task id="LOCAL-00004" summary="参考URL追加更新">
+      <option name="closed" value="true" />
+      <created>1697426226892</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697426226892</updated>
+    </task>
+    <task id="LOCAL-00005" summary="マイグレート、db追加">
+      <option name="closed" value="true" />
+      <created>1697432469005</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697432469005</updated>
+    </task>
+    <task id="LOCAL-00006" summary="基盤のappアプリケーション作成まで完了">
+      <option name="closed" value="true" />
+      <created>1697432934042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697432934042</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DB構成をmodelに反映（admin未対応）">
+      <option name="closed" value="true" />
+      <created>1697435289074</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697435289074</updated>
+    </task>
+    <task id="LOCAL-00008" summary="requirements追加">
+      <option name="closed" value="true" />
+      <created>1697435351215</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697435351215</updated>
+    </task>
+    <task id="LOCAL-00009" summary="バージョン管理外ファイルコミット対比">
+      <option name="closed" value="true" />
+      <created>1697458421047</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697458421047</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="django構築+key除外" />
+    <MESSAGE value="README作成" />
+    <MESSAGE value="README回生上げるため改行複数追加更新" />
+    <MESSAGE value="参考URL追加更新" />
+    <MESSAGE value="マイグレート、db追加" />
+    <MESSAGE value="基盤のappアプリケーション作成まで完了" />
+    <MESSAGE value="DB構成をmodelに反映（admin未対応）" />
+    <MESSAGE value="requirements追加" />
+    <MESSAGE value="バージョン管理外ファイルコミット対比" />
+    <option name="LAST_COMMIT_MESSAGE" value="バージョン管理外ファイルコミット対比" />
+  </component>
+</project>
