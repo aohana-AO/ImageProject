@@ -40,6 +40,8 @@
         {% csrf_token %}
         <div class="prompt">Prompt</div>
         <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+        <div class="prompt">Negative_Prompt</div>
+        <textarea class="sidebar-textarea" name="negative_prompt" id="negative_prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
 
         <button id="submit-button" type="submit">送信</button>
     </form>

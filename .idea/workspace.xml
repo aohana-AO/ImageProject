@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="バージョン管理外ファイルコミット対比">
-      <change beforePath="$PROJECT_DIR$/.idea/ImageProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ImageProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +19,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/accounts" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/accounts",
-    "last_opened_file_path": "/Users/aoiyamada/PycharmProjects/ImageProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/apikey周り修正&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aoiyamada/PycharmProjects/ImageProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -68,10 +64,8 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="ImageProject.settings" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../ImageCreateProject/env/venv/bin/python" />
-      <option name="SDK_NAME" value="Python 3.9 (ImageCreateProject) (2)" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -100,13 +94,6 @@
       <workItem from="1697426680609" duration="85000" />
       <workItem from="1697430674247" duration="3734000" />
       <workItem from="1697458237179" duration="33000" />
-      <workItem from="1697458312628" duration="441000" />
-      <workItem from="1698023676934" duration="3684000" />
-      <workItem from="1699233792967" duration="827000" />
-      <workItem from="1699234857812" duration="979000" />
-      <workItem from="1699236227740" duration="610000" />
-      <workItem from="1701047505107" duration="42000" />
-      <workItem from="1701047561587" duration="7047000" />
     </task>
     <task id="LOCAL-00001" summary="django構築+key除外">
       <option name="closed" value="true" />
@@ -172,19 +159,30 @@
       <option name="project" value="LOCAL" />
       <updated>1697435351215</updated>
     </task>
-    <task id="LOCAL-00009" summary="バージョン管理外ファイルコミット対比">
+    <task id="LOCAL-00009" summary="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）">
       <option name="closed" value="true" />
-      <created>1697458421047</created>
+      <created>1701499571259</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1697458421047</updated>
+      <updated>1701499571259</updated>
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="django構築+key除外" />
@@ -195,7 +193,7 @@
     <MESSAGE value="基盤のappアプリケーション作成まで完了" />
     <MESSAGE value="DB構成をmodelに反映（admin未対応）" />
     <MESSAGE value="requirements追加" />
-    <MESSAGE value="バージョン管理外ファイルコミット対比" />
-    <option name="LAST_COMMIT_MESSAGE" value="バージョン管理外ファイルコミット対比" />
+    <MESSAGE value="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）" />
+    <option name="LAST_COMMIT_MESSAGE" value="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）" />
   </component>
 </project>
