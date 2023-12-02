@@ -5,6 +5,8 @@
   {% load static %}
    <link rel="stylesheet" href="{% static 'css/style.css' %}">
    <link rel="stylesheet" href="{% static 'css/canvas.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="history.js"></script>
 </head>
 
 <body>
@@ -35,17 +37,27 @@
   </header>
 
   <div class="sidebar sidebar-left">
-    <form action="{% url 'index' %}" method="post">
+
+        <button id="choose-style-button">履歴　　　　　　　　　　　　　　　　　　　　　　　　＞</button>
+
+
+      <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
         <div class="prompt">Prompt</div>
-        <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+        <div class="textarea-container">
+            <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+            <button id="save-button"></button>
+        </div>
+          <div class="prompt">Negativ Prompt</div> <!-- Prompt を追加 -->
+            <textarea class="sidebar-textarea" id=Negativ_Prompt rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
+            <button id="submit-button" type="submit">送信</button>
+      </form>
 
-        <button id="submit-button" type="submit">送信</button>
-    </form>
   </div>
 
  <div class="content">
     <!-- メインコンテンツ -->
+ <ul id="content-list"style="display: none;"></ul>
 
 <div class="image-center">
     <img src="{{ image_name }}">
@@ -59,6 +71,7 @@
     </script>
      {% endif %}
     <script src="{% static 'js/canvas.js' %}"></script>
+
      -->
 
   </div>
