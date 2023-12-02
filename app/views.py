@@ -52,12 +52,12 @@ def image_create(prompt, negative_prompt,image_name):
         # レスポンス確認
         if response.status_code == 200:
             break  # APIキーが有効な場合はループを抜けます
-        else:
+        elif response.status_code==429:
             # APIキーが無効な場合、次のAPIキーに切り替えます
             current_api_key_index += 1
-        # レスポンス確認
-        if response.status_code != 200:
-            raise Exception("Non-200 response: " + str(response.text))
+        else:
+            raise Exception("Non-200 response: " + response.status_code + str(response.text))
+
 
     # レスポンス取得
     data = response.json()
