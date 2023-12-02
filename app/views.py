@@ -10,7 +10,7 @@ import time
 import environ
 
 
-def image_create(prompt, image_name):
+def image_create(prompt, negative_prompt,image_name):
     engine_id = "stable-diffusion-xl-1024-v1-0"
     api_host = os.getenv('API_HOST', 'https://api.stability.ai')
     env = environ.Env()
@@ -42,10 +42,10 @@ def image_create(prompt, image_name):
                     {
                         "text": prompt
                     },
-                    # {#ネガティブプロンプト
-                    # "text": "",
-                    # "weight": -1.0
-                    # },
+                    {
+                        "text": negative_prompt,
+                        "weight": -1.0
+                     }
                 ],
             },
         )
@@ -76,10 +76,11 @@ class IndexView(View):
 
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
+        negative_prompt = request.POST.get('negative_prompt')
         image_name=f"static/img/{prompt}.png"
 
         print(image_name)
-        image_create(prompt,image_name)
+        image_create(prompt,negative_prompt,image_name)
 
         # ここで画像の処理を実装する。例えば、画像名に基づいて画像を取得してHttpResponseを返す。
         # response = ...

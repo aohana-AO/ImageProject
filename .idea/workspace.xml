@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="requirements追加">
+    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697435351215</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）">
+      <option name="closed" value="true" />
+      <created>1701499571259</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701499571259</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +182,7 @@
     <MESSAGE value="基盤のappアプリケーション作成まで完了" />
     <MESSAGE value="DB構成をmodelに反映（admin未対応）" />
     <MESSAGE value="requirements追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirements追加" />
+    <MESSAGE value="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）" />
+    <option name="LAST_COMMIT_MESSAGE" value="keyそのままあげていたとんでも処理の修正&#10;（おそらく他に見られることないだろうからコミット履歴まではもう触れない）" />
   </component>
 </project>
