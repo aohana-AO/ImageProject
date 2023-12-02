@@ -15,8 +15,7 @@ def image_create(prompt, negative_prompt,image_name):
     api_host = os.getenv('API_HOST', 'https://api.stability.ai')
     env = environ.Env()
     api_keys = env('IMAGE_API_KEY').split(',')
-    print(env('IMAGE_API_KEY'))
-    print(api_keys)
+
 
     current_api_key_index = 0  # 現在のAPIキーのインデックス
     Style_preset = ["3d-model", "analog-film", "anime", "cinematic", "comic-book", "digital-art", "enhance",
@@ -77,10 +76,10 @@ class IndexView(View):
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
         negative_prompt = request.POST.get('negative_prompt')
-        image_name=f"static/img/{prompt}.png"
+        image_name=f"img/{prompt}.png"
 
         print(image_name)
-        image_create(prompt,negative_prompt,image_name)
+        image_create(prompt,negative_prompt,f'static/{image_name}')
 
         # ここで画像の処理を実装する。例えば、画像名に基づいて画像を取得してHttpResponseを返す。
         # response = ...
