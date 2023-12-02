@@ -13,7 +13,7 @@
   <header class="header">
 
     <div class="header-logo">
-      <img src="static/img/totoro_rogo.png" alt="Your Logo" class="logo-image">
+      <img src="{% static 'img/totoro_rogo.png' %}" alt="Your Logo" class="logo-image">
     </div>
 
     <div class="navtext-container">
@@ -51,7 +51,7 @@
     <!-- メインコンテンツ -->
 
 <div class="image-center">
-    <img src="{{ image_name }}">
+    <img src="{% static image_name %}">
 </div>
 
     <!-- Canvas要素を追加
