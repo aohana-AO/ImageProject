@@ -23,5 +23,5 @@ urlpatterns = [
     path('app/', include('app.urls')),
     path('auth/', include('allauth.urls')),
     path('', RedirectView.as_view(url='/app/'), name='app-redirect'),  # この行を変更
-    path('login/', include('login.urls')),  # 追加
+    path('login', include('login.urls')),  # 追加
 ]

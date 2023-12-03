@@ -70,8 +70,11 @@ def image_create(prompt, negative_prompt, image_name):
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        Images = Image.objects.filter(user_ID=self.request.user)
-        return render(request, 'app/index.html', {'Images': Images})
+        if not self.request.user.is_authenticated:
+            return render(request, 'app/index.html')
+        else:
+            Images = Image.objects.filter(user_ID=self.request.user)
+            return render(request, 'app/index.html', {'Images': Images})
 
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
@@ -97,3 +100,7 @@ def image_detail_view(request, image_id):
     image = get_object_or_404(Image, pk=image_id)
     Images = Image.objects.filter(user_ID=request.user)
     return render(request, 'app/index.html', {'image': image, 'Images': Images})
+
+def image_gallery_view(request):
+    Images = Image.objects.filter(user_ID=request.user)
+    return render(request, 'app/gallery.html', {'Images': Images})
