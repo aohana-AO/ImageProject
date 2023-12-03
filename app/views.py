@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.http import HttpResponse
@@ -8,16 +8,14 @@ import os
 import requests
 import time
 import environ
+from .models import Image
 
 
-
-
-def image_create(prompt, negative_prompt,image_name):
+def image_create(prompt, negative_prompt, image_name):
     engine_id = "stable-diffusion-xl-1024-v1-0"
     api_host = os.getenv('API_HOST', 'https://api.stability.ai')
     env = environ.Env()
     api_keys = env('IMAGE_API_KEY').split(',')
-
 
     current_api_key_index = 0  # 現在のAPIキーのインデックス
     Style_preset = ["3d-model", "analog-film", "anime", "cinematic", "comic-book", "digital-art", "enhance",
@@ -46,19 +44,18 @@ def image_create(prompt, negative_prompt,image_name):
                     {
                         "text": negative_prompt,
                         "weight": -1.0
-                     }
+                    }
                 ],
             },
         )
         # レスポンス確認
         if response.status_code == 200:
             break  # APIキーが有効な場合はループを抜けます
-        elif response.status_code==429:
+        elif response.status_code == 429:
             # APIキーが無効な場合、次のAPIキーに切り替えます
             current_api_key_index += 1
         else:
             raise Exception("Non-200 response: " + response.status_code + str(response.text))
-
 
     # レスポンス取得
     data = response.json()
@@ -70,21 +67,33 @@ def image_create(prompt, negative_prompt,image_name):
         with open(image_name, "wb") as f:
             f.write(base64.b64decode(image["base64"]))
 
-class IndexView(View):
 
+class IndexView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'app/index.html')
+        Images = Image.objects.filter(user_ID=self.request.user)
+        return render(request, 'app/index.html', {'Images': Images})
 
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
         negative_prompt = request.POST.get('negative_prompt')
-        image_name=f"img/{prompt}.png"
+        image_name = f"img/{prompt}_{negative_prompt}.png"
 
         print(image_name)
-        image_create(prompt,negative_prompt,f'static/{image_name}')
+        image_create(prompt, negative_prompt, f'static/{image_name}')
 
-        # ここで画像の処理を実装する。例えば、画像名に基づいて画像を取得してHttpResponseを返す。
-        # response = ...
+        Image.objects.create(
+            user_ID=self.request.user,
+            image_path=image_name,
+            prompt=prompt,
+            negative_prompt=negative_prompt
+        )
 
-        return render(request, 'app/index.html',{'image_name': image_name})
+        Images = Image.objects.filter(user_ID=self.request.user)
 
+        return render(request, 'app/index.html', {'image_name': image_name, 'Images': Images})
+
+
+def image_detail_view(request, image_id):
+    image = get_object_or_404(Image, pk=image_id)
+    Images = Image.objects.filter(user_ID=request.user)
+    return render(request, 'app/index.html', {'image': image, 'Images': Images})
