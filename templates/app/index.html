@@ -1,79 +1,90 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load socialaccount %}
-<html lang="ja">
 
-<head>
-  {% load static %}
-   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-   <link rel="stylesheet" href="{% static 'css/canvas.css' %}">
-</head>
-
-<body>
-
-  <header class="header">
-
-    <div class="header-logo">
-      <img src="{% static 'img/totoro_rogo.png' %}" alt="Your Logo" class="logo-image">
-    </div>
-
-    <div class="navtext-container">
-      <div class="navtext">company</div>
-    </div>
-
-    <div class="center-container">
-      <div class="button-container">
-        <button class="header-button">Button 1</button>
-        <button class="header-button">Button 2</button>
-        <button class="header-button">Button 3</button>
-        <button class="header-button">Button 4</button>
-      </div>
-    </div>
-
-    <div class="login-container">
-      <button class="login-btn" onclick="showLogin()">Login</button>
-      <button class="logout-btn">Logout</button>
-    </div>
-  </header>
-
-  <div class="sidebar sidebar-left">
-    <form action="{% url 'index' %}" method="post">
-        {% csrf_token %}
-        <div class="prompt">Prompt</div>
-        <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-        <div class="prompt">Negative_Prompt</div>
-        <textarea class="sidebar-textarea" name="negative_prompt" id="negative_prompt" rows="5" cols="30" placeholder="テキストを入力してください"></textarea>
-
-        <button id="submit-button" type="submit">送信</button>
-    </form>
-  </div>
-
- <div class="content">
-    <!-- メインコンテンツ -->
-
-<div class="image-center">
-    <img src="{% static image_name %}">
-</div>
-
-    <!-- Canvas要素を追加
-     <canvas id="myCanvas" width="800" height="500" ></canvas>
-     {% if image_name %}
-     <script>
-    var imageUrl = "{% static image_url %}";
-    </script>
-     {% endif %}
-    <script src="{% static 'js/canvas.js' %}"></script>
-     -->
-
-  </div>
-
-  <div class="sidebar sidebar-right">
-    <a href="#">Option 1</a>
-    <a href="#">Option 2</a>
-    <a href="#">Option 3</a>
-    <a href="#">Option 4</a>
-  </div>
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="sidebar sidebar-left">
+            {% if user.is_authenticated %}
 
 
-</body>
+                <form action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
 
-</html>
+                    {% if image %}
+                        <div class="prompt">Prompt</div>
+                        <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30"
+                                  placeholder="テキストを入力してください">{{ image.prompt }}</textarea>
+                        <div class="prompt">Negative_Prompt</div>
+                        <textarea class="sidebar-textarea" name="negative_prompt" id="negative_prompt" rows="5"
+                                  cols="30"
+                                  placeholder="テキストを入力してください">{{ image.negative_prompt }}</textarea>
+
+                        <button id="submit-button" type="submit">送信</button>
+                    {% else %}
+                        <div class="prompt">Prompt</div>
+                        <textarea class="sidebar-textarea" name="prompt" id="prompt" rows="5" cols="30"
+                                  placeholder="テキストを入力してください"></textarea>
+                        <div class="prompt">Negative_Prompt</div>
+                        <textarea class="sidebar-textarea" name="negative_prompt" id="negative_prompt" rows="5"
+                                  cols="30"
+                                  placeholder="テキストを入力してください"></textarea>
+
+                        <button id="submit-button" type="submit">送信</button>
+                    {% endif %}
+
+                </form>
+
+
+            {% endif %}
+        </div>
+
+        <div class="content">
+            <!-- メインコンテンツ -->
+            {% if image_name %}
+                <div class="image-center" style="margin-bottom: -20%">
+                    <img src="{% static image_name %}">
+                </div>
+
+            {% endif %}
+
+            {% if image %}
+                <div class="image-center" style="margin-bottom: -20%">
+                    <img src="{% static image.image_path %}">
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+        <div class="sidebar sidebar-right">
+            <h3 style="color: white;text-align: center;margin-top: -7%">プロンプト履歴</h3>
+            <hr>
+            {% if user.is_authenticated %}
+                {% for i in Images reversed %}
+                    <a href="{% url 'image_detail' i.imageID %}">prompt：{{ i.prompt }}<br>negative_prompt{{ i.negative_prompt }}
+                    </a>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+    {% else %}
+        <dev class="position-absolute top-50 start-50 translate-middle">
+            <div class="card " style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Log in</h5>
+                    <hr>
+                    <p class="card-text">サービスを利用するにはログインが必要です。</p>
+                    <a href="/auth/google/login/?next=/">
+                        <button class="btn btn-primary">Google認証</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </dev>
+    {% endif %}
+{% endblock %}

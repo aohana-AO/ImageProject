@@ -137,10 +137,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 # ログインのリダイレクトURL
-LOGIN_REDIRECT_URL = 'app/'
+LOGIN_REDIRECT_URL = ''
 
 # ログアウトのリダイレクトURL
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = ''
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
