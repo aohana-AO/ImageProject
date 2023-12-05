@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block content %}
+    <body style="background-color: #1b1b1b">
+
+    <dev class="position-absolute top-50 start-50 translate-middle">
+        <div class="card " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Log in</h5>
+                <hr>
+                <p class="card-text">サービスを利用するにはログインが必要です。</p>
+                <a href="/auth/google/login/?next=/">
+                    <button class="btn btn-primary">Google認証</button>
+                </a>
+            </div>
+        </div>
+
+
+    </dev>
+    </body>
+{% endblock %}

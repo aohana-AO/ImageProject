@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="row row-cols-3">
+
+
+        {% for i in Images %}
+
+            <div class="col">
+                <div class="card text-center">
+                    <img style="" src="{% static i.image_path %}" class="card-img-top mx-auto d-block" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">prompt：{{ i.prompt }}</h5>
+                        <h5 class="card-title">negative：{{ i.negative_prompt }}</h5>
+                        <a href="{% url 'image_detail' i.imageID %}">
+                            <button class="btn btn-primary">詳細</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        {% endfor %}
+    </div>
+
+
+
+
+
+{% endblock %}
