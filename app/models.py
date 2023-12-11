@@ -25,6 +25,7 @@ class Image(models.Model):
     negative_prompt = models.CharField(max_length=255,default='')
 
 
+
     def __str__(self):
         return f"Image {self.imageID} - User: {self.user_ID}"
 
