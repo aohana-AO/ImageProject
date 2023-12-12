@@ -6,7 +6,18 @@
     {% if user.is_authenticated %}
         <div class="sidebar sidebar-left">
             {% if user.is_authenticated %}
-
+            <div class = "choose-style-text">ImageStyle</div>
+            <div class = "choose-style-base">
+                <div class="dropdown">
+            <button class="choose-style-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            choose style　　　　　　　　　　　　　＞</button>
+          <ul class="dropdown-menu" style="color: black;" >
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+            </div>
 
                 <form action="{% url 'index' %}" method="post">
                     {% csrf_token %}
@@ -60,11 +71,11 @@
         </div>
 
         <div class="sidebar sidebar-right">
-            <h3 style="color: white;text-align: center;margin-top: -7%">プロンプト履歴</h3>
+            <h3 style="color: #EEEEEE;text-align: center;margin-top: -7%">プロンプト履歴</h3>
             <hr>
             {% if user.is_authenticated %}
                 {% for i in Images reversed %}
-                    <a href="{% url 'image_detail' i.imageID %}">prompt：{{ i.prompt }}<br>negative_prompt{{ i.negative_prompt }}
+                    <a href="{% url 'image_detail' i.imageID %}">prompt：{{ i.prompt }}<br>negative_prompt：{{ i.negative_prompt }}
                     </a>
                     <hr>
                 {% endfor %}
