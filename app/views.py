@@ -10,23 +10,23 @@ import time
 import environ
 from .models import Image
 
-def image_create(prompt, image_name):
-    engine_id = "stable-diffusion-xl-beta-v2-2-2"
 
-
-def image_create(prompt, negative_prompt, image_name,number):
+def image_create(prompt, negative_prompt, image_name ,number):
     engine_id = "stable-diffusion-xl-1024-v1-0"
     api_host = os.getenv('API_HOST', 'https://api.stability.ai')
     env = environ.Env()
     api_keys = env('IMAGE_API_KEY').split(',')
 
-    number = int(number)
     current_api_key_index = 0  # 現在のAPIキーのインデックス
-
     Style_preset = ["3d-model", "analog-film", "anime", "cinematic", "comic-book", "digital-art", "enhance",
                     "fantasy-art", "isometric", "line-art", "low-poly", "modeling-compound", "neon-punk", "origami",
                     "photographic", "pixel-art", "tile-texture"]
     style = Style_preset[number]
+    print('--------')
+    print(number)
+    print(style)
+    print('--------')
+
     while current_api_key_index < len(api_keys):
         # API Keyの取得確認
         if api_keys[current_api_key_index] is None:
@@ -61,7 +61,7 @@ def image_create(prompt, negative_prompt, image_name,number):
             # APIキーが無効な場合、次のAPIキーに切り替えます
             current_api_key_index += 1
         else:
-            raise Exception("Non-200 response: " + response.status_code + str(response.text))
+            raise Exception("Non-200 response: " + str(response.status_code) + str(response.text))
 
     # レスポンス取得
     data = response.json()
@@ -84,59 +84,23 @@ class IndexView(View):
 
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
+        number = int(request.POST.get('number'))
         negative_prompt = request.POST.get('negative_prompt')
         image_name = f"img/{prompt}_{negative_prompt}.png"
-        number = request.POST.get('number')
-        print(number)
+
         print(image_name)
-        # 'number'パラメータをimage_create関数に渡す
-        image_create(prompt, negative_prompt, f'static/{image_name}', number)
+        image_create(prompt, negative_prompt, f'static/{image_name}',number)
 
         Image.objects.create(
             user_ID=self.request.user,
             image_path=image_name,
             prompt=prompt,
-            negative_prompt=negative_prompt,
-            ##selected_number=selected_number
+            negative_prompt=negative_prompt
         )
 
         Images = Image.objects.filter(user_ID=self.request.user)
 
-    def image_create(prompt,image_name):
-        engine_id = "stable-diffusion-xl-beta-v2-2-2"
-        api_host = os.getenv('API_HOST', 'https://api.stability.ai')
-        api_key = "sk-tYk6w9Fme97inuhtUIHXkbNlsrjQoI5GKjJWaN2qCHwmrWy3"
-
-        # API Keyの取得確認
-        if api_key is None:
-            raise Exception("Missing Stability API key.")
-
-        # API呼び出し
-        response = requests.post(
-            f"{api_host}/v1/generation/{engine_id}/text-to-image",
-            headers={
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": f"Bearer {api_key}"
-            },
-            json={
-                "text_prompts": [
-                    {
-                        "text": prompt
-                    }
-                ],
-            },
-        )
-
-        # レスポンス確認
-        if response.status_code != 200:
-            raise Exception("Non-200 response: " + str(response.text))
-
-        # レスポンス取得
-        data = response.json()
-
-        return render(request, 'app/index.html', {'image_name': image_name, 'Images': Images, 'number': number})
-
+        return render(request, 'app/index.html', {'image_name': image_name, 'Images': Images})
 
 
 def image_detail_view(request, image_id):
