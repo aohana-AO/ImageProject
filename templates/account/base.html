@@ -1,0 +1,90 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock head_title %}</title>
+    {% block extra_style %}
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+h2 {
+    margin: 0;
+    color: #EEEEEE;
+}
+.google-btn {
+    margin-top: 20px;
+    background-color: #30a14e;
+    border: 1px solid #EEEEEE;
+    color: white;
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-text {
+    font-weight: bold;
+}
+.google-btn:hover {
+    background-color: #216e39;
+}
+</style>
+{% endblock extra_style %}
+
+  </head>
+  <body>
+    {% block body %}
+
+<!--    {% if messages %}-->
+<!--    <div>-->
+<!--      <strong>{% trans "Messages:" %}</strong>-->
+<!--      <ul>-->
+<!--        {% for message in messages %}-->
+<!--        <li>{{message}}</li>-->
+<!--        {% endfor %}-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--    {% endif %}-->
+
+<!--    <div>-->
+<!--      <strong>{% trans "Menu:" %}</strong>-->
+<!--      <ul>-->
+<!--        {% if user.is_authenticated %}-->
+<!--        <li><a href="{% url 'account_email' %}">{% trans "Change Email" %}</a></li>-->
+<!--        <li><a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a></li>-->
+<!--        {% else %}-->
+<!--        <li><a href="{% url 'account_login' %}">{% trans "Sign In" %}</a></li>-->
+<!--        <li><a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>-->
+<!--        {% endif %}-->
+<!--      </ul>-->
+<!--    </div>-->
+<
+    {% block content %}
+    {% endblock content %}
+    {% endblock body %}
+    {% block extra_body %}
+    {% endblock extra_body %}
+  </body>
+</html>
