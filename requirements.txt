@@ -1,4 +1,5 @@
 asgiref==3.7.2
+gunicorn
 certifi==2023.7.22
 cffi==1.16.0
 charset-normalizer==3.3.2
