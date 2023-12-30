@@ -121,11 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# 静的ファイルのURL
 STATIC_URL = '/static/'
 
-# 追加する設定
-# 静的ファイルが本番環境で集められるディレクトリ
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# 静的ファイルを集めるディレクトリ
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 開発中にDjangoが静的ファイルを探すディレクトリのリスト
 STATICFILES_DIRS = [
