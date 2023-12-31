@@ -16,7 +16,7 @@ env.read_env('.env')
 
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
@@ -122,10 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # 静的ファイルのURL
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 
 # 静的ファイルを集めるディレクトリ
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'https://imageproject.onrender.com/staticfiles/'
 
 # 開発中にDjangoが静的ファイルを探すディレクトリのリスト
 STATICFILES_DIRS = [
