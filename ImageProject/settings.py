@@ -16,7 +16,7 @@ env.read_env('.env')
 
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 静的ファイルを集めるディレクトリ
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 開発中にDjangoが静的ファイルを探すディレクトリのリスト
 STATICFILES_DIRS = [
