@@ -16,7 +16,7 @@ env.read_env('.env')
 
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = env.bool('DEBUG')
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
