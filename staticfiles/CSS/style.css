@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: "Futura", Helvetica, sans-serif;
+  background-color: #0F1111; /*背景色が設定されていないところは自動的にこの色になる*/
+}
+/* Navbar & Navmenu color */
+:root {
+  --background-navbar: rgba(55, 55, 55, 1.00);
+}
+.header {
+  background: #0F1419; /* 背景色を黒に設定 */
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(109, 108, 108); /* 白い線を追加 */
+}
+.header-logo {
+  margin-left: 10px; /* ロゴの左側の余白を設定 */
+}
+.logo-image {
+  width: 40px; /* ロゴの幅を設定 */
+  height: auto; /* アスペクト比を保つための自動高さ */
+}
+.login-container {
+  margin-right: 20px;
+  margin-left: auto;
+}
+.login-btn,
+.logout-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #45A049;
+}
+.logout-btn {
+  display: inline-block;
+}
+.navtext-container {
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navtext {
+  position: absolute;
+  text-transform: uppercase;
+  color: #ddd;
+  letter-spacing: 4px;
+  font-size: 20px;
+  left: 50px;
+}
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--background-navbar);
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  background-color: #45A049;
+  color: white;
+}
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+/* left-sidebar.css */
+.sidebar.sidebar-left {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: auto;
+  left: 0;
+  background-color: #0F1419;
+  overflow-x: hidden;
+  padding-top: 100px;
+  border-right: 1px solid rgb(109, 108, 108);
+}.
+.sidebar.sidebar-left a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar.sidebar-left a:hover {
+  background-color: #45A049;
+  color: white;
+}
+.sidebar.sidebar-left a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+/* right-sidebar.css */
+.sidebar.sidebar-right {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: auto;
+  right: 0;
+  background-color: #0F1419;
+  overflow-x: hidden;
+  padding-top: 100px;
+  border-left: 1px solid rgb(109, 108, 108);
+}
+.sidebar.sidebar-right a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar.sidebar-right a:hover {
+  background-color: #45A049;
+  color: white;
+}
+.sidebar.sidebar-right a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.content {
+  margin-left: 400px; /* サイドバーの幅 + マージン */
+  margin-right: 400px; /* サイドバーの幅 + マージン */
+  padding: 16px;
+  transition: margin 0.3s;
+}
+.center-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.textContent{
+}
+/*textContentクラスのdivに囲まれたpタグにはこの属性を付与する*/
+.textContent p{
+    margin-top: 60px;
+    margin-bottom: -50px;
+    overflow: auto;
+    color: white;
+}
+.button-container {
+  position: absolute;
+  bottom: 10px; /* ä¸‹å´ã‹ã‚‰ã®è·é›¢ã‚’èª¿æ•´ */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header-button {
+  background-color: #433;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 1px;
+  transition: background-color 0.3s;
+}
+.header-button:hover {
+  background-color: #005F7D;
+}
+.sidebar-textarea {
+  background-color: rgb(43, 42, 42); /* グレーの背景色を設定 */
+  border: none; /* ボーダーを削除 */
+  padding: 10px; /* テキストエリア内の余白を設定 */
+  width: 90%; /* テキストエリアの幅を100%に設定 */
+  box-sizing: border-box; /* ボックスサイズを境界ボックスに設定 */
+  resize: none; /* テキストエリアのリサイズを無効にする */
+  margin-left: 10px; /* 左側にもマージンを追加 */
+  border-radius: 5px; /* 丸みをつける */
+  border: 1px solid rgb(109, 108, 108); /* 細い白い枠線を追加 */
+  color: white;
+}
+.prompt {
+  color: white; /* テキストの色を白に設定 */
+  margin-left: 10px; /* 左側にもマージンを追加 */
+}
+#submit-button {
+  background-color: #5D2CAC; /* より濃い青色の背景色を設定 */
+  color: white;
+  border: none;
+  padding: 10px 166px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px; /* ボタンの上下のマージンを設定 */
+}
+#submit-button:hover {
+  background-color: #7550B1; /* ホバー時の背景色を変更 */
+}
+.image-center {
+    display: flex;
+    justify-content: center;  /* 水平方向の中央揃え */
+    align-items: center;      /* 垂直方向の中央揃え */
+    height: 100vh;            /* 画面の高さ全体を使用 */
+}
+
+.image-center img {
+    max-width: 100%;          /* 画像がコンテナより大きい場合、画像のサイズを調整 */
+    max-height: 100%;         /* 同上 */
+}
