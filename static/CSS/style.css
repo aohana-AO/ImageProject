@@ -32,7 +32,7 @@ body {
 .login-btn,
 .logout-btn {
   background-color: #4CAF50;
-  color: white;
+  color: #EEEEEE;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -82,7 +82,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 18px;
-  color: white;
+  color: #EEEEEE;
   display: block;
   transition: 0.3s;
 }
@@ -105,14 +105,14 @@ body {
   left: 0;
   background-color: #0F1419;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding-top: 60px;
   border-right: 1px solid rgb(109, 108, 108);
 }.
 .sidebar.sidebar-left a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 18px;
-  color: white;
+  color: #EEEEEE;
   display: block;
   transition: 0.3s;
 }
@@ -181,8 +181,8 @@ body {
   transform: translateX(-50%);
 }
 .header-button {
-  background-color: #433;
-  color: white;
+  background-color: #5D2CAC;
+  color: #EEEEEE;
   border: none;
   padding: 5px 10px;
   text-align: center;
@@ -195,7 +195,7 @@ body {
   transition: background-color 0.3s;
 }
 .header-button:hover {
-  background-color: #005F7D;
+  background-color: #7550B1;
 }
 .sidebar-textarea {
   background-color: rgb(43, 42, 42); /* グレーの背景色を設定 */
@@ -210,17 +210,18 @@ body {
   color: white;
 }
 .prompt {
-  color: white; /* テキストの色を白に設定 */
+  color: #EEEEEE; /* テキストの色を白に設定 */
   margin-left: 10px; /* 左側にもマージンを追加 */
 }
 #submit-button {
-  background-color: #5D2CAC; /* より濃い青色の背景色を設定 */
-  color: white;
-  border: none;
-  padding: 10px 166px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px; /* ボタンの上下のマージンを設定 */
+    background-color: #5D2CAC;
+    color: #EEEEEE;
+    border: none;
+    padding: 10px 163px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 5px;
 }
 #submit-button:hover {
   background-color: #7550B1; /* ホバー時の背景色を変更 */
@@ -235,4 +236,140 @@ body {
 .image-center img {
     max-width: 100%;          /* 画像がコンテナより大きい場合、画像のサイズを調整 */
     max-height: 100%;         /* 同上 */
+}
+
+
+
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+h2 {
+  margin: 0;
+  color: #333;
+}
+
+.google-btn {
+  margin-top: 20px;
+  background-color: #4285f4;
+  color: white;
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-icon-wrapper {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.google-icon {
+  width: 100%;
+}
+
+.btn-text {
+  font-weight: bold;
+}
+
+/* Add some hover effects if needed */
+.google-btn:hover {
+  background-color: #357ae8;
+}
+
+
+.choose-style-base{
+    background-color: transparent;
+    border: 1px solid rgb(109, 108, 108);
+    margin-left: 12px;
+    margin-right: 31px;
+    margin-bottom: 10px;
+}
+
+.choose-style-text {
+  background-color: transparent; /* 背景色を透明に設定 */
+  font-size: 16px;
+  color: #EEEEEE;
+  border: none;
+  width: 90%;
+  padding-left: 12px;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.choose-style-button {
+  background-color: transparent; /* 背景色を透明に設定 */
+  color: #EEEEEE;
+  border: none;
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom 0px;
+  width: 90%;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.choose-style-button:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.dropdown-menu.show {
+    --bs-dropdown-zindex: 1000;
+    --bs-dropdown-min-width: 10rem;
+    --bs-dropdown-padding-x: 0;
+    --bs-dropdown-padding-y: 0.5rem;
+    --bs-dropdown-spacer: 0.125rem;
+    --bs-dropdown-font-size: 1rem;
+    --bs-dropdown-color: var(--bs-body-color);
+    --bs-dropdown-bg: #212020;
+    --bs-dropdown-border-color: var(--bs-border-color-translucent);
+    --bs-dropdown-border-radius: var(--bs-border-radius);
+    --bs-dropdown-border-width: var(--bs-border-width);
+    --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
+    --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+    --bs-dropdown-divider-margin-y: 0.5rem;
+    --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --bs-dropdown-link-color: var(--bs-body-color);
+    --bs-dropdown-link-hover-color: var(--bs-body-color);
+    --bs-dropdown-link-hover-bg: #4073a7;
+    --bs-dropdown-link-active-color: #fff;
+    --bs-dropdown-link-active-bg: #0d6efd;
+    --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+    --bs-dropdown-item-padding-x: 1rem;
+    --bs-dropdown-item-padding-y: 0.25rem;
+    --bs-dropdown-header-color: #6c757d;
+    --bs-dropdown-header-padding-x: 1rem;
+    --bs-dropdown-header-padding-y: 0.5rem;
+    position: absolute;
+    z-index: var(--bs-dropdown-zindex);
+    display: none;
+    min-width: var(--bs-dropdown-min-width);
+    padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+    margin: 0;
+    font-size: var(--bs-dropdown-font-size);
+    color: var(--bs-dropdown-color);
+    text-align: left;
+    list-style: none;
+    background-color: var(--bs-dropdown-bg);
+    background-clip: padding-box;
+    border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-radius: var(--bs-dropdown-border-radius);
+    border: 1px solid rgb(109, 108, 108);
 }

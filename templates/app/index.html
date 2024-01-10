@@ -38,40 +38,34 @@
                                   placeholder="テキストを入力してください"></textarea>
 
                         <br>
+                        <div class="choose-style-text">ImageStyle</div>
+                        <div class="choose-style-base">
+                            <div class="dropdown">
+                                <input type="hidden" name="number" id="hiddenNumberField" value="">
 
-                        <!-- Example single danger button -->
-                        <div class="d-grid gap-2 col-10 mx-auto">
-                        <br>
-                        <div class="btn-group">
-                            <input type="hidden" name="number" id="hiddenNumberField" value="">
-
-
-                          <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownButton">
-                            Style
-                          </button>
-
-                          <ul class="dropdown-menu">
-                            <li class="dropdown-item" data-value="0">3d-model</li>
-                            <li class="dropdown-item" data-value="1">analog-film</li>
-                              <li class="dropdown-item" data-value="2">anime</li>
-                              <li class="dropdown-item" data-value="3">cinematic</li>
-                              <li class="dropdown-item" data-value="4">comic-book</li>
-                              <li class="dropdown-item" data-value="5">digital-art</li>
-                              <li class="dropdown-item" data-value="6">enhance</li>
-                              <li class="dropdown-item" data-value="7">fantasy-art</li>
-                              <li class="dropdown-item" data-value="8">isometric</li>
-                              <li class="dropdown-item" data-value="9">line-art</li>
-                              <li class="dropdown-item" data-value="10">low-poly</li>
-                              <li class="dropdown-item" data-value="11">modeling-compound</li>
-                              <li class="dropdown-item" data-value="12">neon-pu</li>
-                              <li class="dropdown-item" data-value="14">photographic</li>
-                              <li class="dropdown-item" data-value="15">pixel-art</li>
-                              <li class="dropdown-item" data-value="16">tile-texture</li>
-                          </ul>
+                                <button class="choose-style-button" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownButton">
+                                    Style
+                                </button>
+                                <ul class="dropdown-menu" style="color: white;text-align: center;">
+                                    <li class="dropdown-item" data-value="0"><a class="dropdown-item">3d-model</a></li>
+                                    <li class="dropdown-item" data-value="1"><a class="dropdown-item">analog-film</a></li>
+                                    <li class="dropdown-item" data-value="2"><a class="dropdown-item">anime</a></li>
+                                    <li class="dropdown-item" data-value="3"><a class="dropdown-item">cinematic</a></li>
+                                    <li class="dropdown-item" data-value="4"><a class="dropdown-item">comic-book</a></li>
+                                    <li class="dropdown-item" data-value="5"><a class="dropdown-item">digital-art</a></li>
+                                    <li class="dropdown-item" data-value="6"><a class="dropdown-item">enhance</a></li>
+                                    <li class="dropdown-item" data-value="7"><a class="dropdown-item">fantasy-art</a></li>
+                                    <li class="dropdown-item" data-value="8"><a class="dropdown-item">isometric</a></li>
+                                    <li class="dropdown-item" data-value="9"><a class="dropdown-item">line-art</a></li>
+                                    <li class="dropdown-item" data-value="10"><a class="dropdown-item">low-poly</a></li>
+                                    <li class="dropdown-item" data-value="11"><a class="dropdown-item">modeling-compound</a></li>
+                                    <li class="dropdown-item" data-value="12"><a class="dropdown-item">neon-pu</a></li>
+                                    <li class="dropdown-item" data-value="14"><a class="dropdown-item">photographic</a></li>
+                                    <li class="dropdown-item" data-value="15"><a class="dropdown-item">pixel-art</a></li>
+                                    <li class="dropdown-item" data-value="16"><a class="dropdown-item">tile-texture</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <br>
-                        </div>
-
 
 
                         <button id="submit-button" type="submit">送信</button>
@@ -104,11 +98,11 @@
         </div>
 
         <div class="sidebar sidebar-right">
-            <h3 style="color: white;text-align: center;margin-top: -7%">プロンプト履歴</h3>
+            <h3 style="color: #EEEEEE;text-align: center;margin-top: -7%">プロンプト履歴</h3>
             <hr>
             {% if user.is_authenticated %}
                 {% for i in Images reversed %}
-                    <a href="{% url 'image_detail' i.imageID %}">prompt：{{ i.prompt }}<br>negative_prompt{{ i.negative_prompt }}
+                    <a href="{% url 'image_detail' i.imageID %}">prompt：{{ i.prompt }}<br>negative_prompt：{{ i.negative_prompt }}
                     </a>
                     <hr>
                 {% endfor %}
