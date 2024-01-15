@@ -16,7 +16,7 @@ env.read_env('.env')
 
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
