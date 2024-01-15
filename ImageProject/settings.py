@@ -18,6 +18,11 @@ env.read_env('.env')
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = False
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#SUPERUSER_NAME = env('SUPERUSER_NAME')
+#SUPERUSER_EMAIL = env('SUPERUSER_EMAIL')
+#SUPERUSER_PASSWORD = env('SUPERUSER_PASSWORD')
 
 ALLOWED_HOSTS = ['*']
 
@@ -51,7 +56,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
+    'allauth.account.middleware.AccountMiddleware',
+    # deploy
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # 追加
 ]
 
 ROOT_URLCONF = 'ImageProject.urls'
@@ -121,17 +128,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# 静的ファイルのURL
-STATIC_URL = '/staticfiles/'
-
-# 静的ファイルを集めるディレクトリ
-STATIC_ROOT = 'https://imageproject.onrender.com/staticfiles/'
-
-# 開発中にDjangoが静的ファイルを探すディレクトリのリスト
-STATICFILES_DIRS = [
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join('static', 'static')
+# pwa
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-]
-
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
