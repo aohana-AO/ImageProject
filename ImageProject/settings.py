@@ -18,7 +18,7 @@ env.read_env('.env')
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #SUPERUSER_NAME = env('SUPERUSER_NAME')
 #SUPERUSER_EMAIL = env('SUPERUSER_EMAIL')
