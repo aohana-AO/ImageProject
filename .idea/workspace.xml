@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="ブランチ作成のためのコミット">
+    <list default="true" id="c9e448df-94d7-4bdc-8cfe-e8e90a2cab0d" name="変更" comment="staticroot追加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
@@ -18,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/dev" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +37,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2Z6GXxH759tMCbqbV58UQhmA3qk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,11 +48,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "feature/loginUi",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/figure",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,9 +83,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701735170220</updated>
+      <workItem from="1705766682103" duration="630000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ホワイトノイズ周り構築">
+      <option name="closed" value="true" />
+      <created>1705282891398</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705282891398</updated>
+    </task>
+    <task id="LOCAL-00003" summary="requirements更新">
+      <option name="closed" value="true" />
+      <created>1705283177856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705283177856</updated>
+    </task>
+    <task id="LOCAL-00004" summary="デバッグ追加">
+      <option name="closed" value="true" />
+      <created>1705283595270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705283595270</updated>
+    </task>
+    <task id="LOCAL-00005" summary="urlsapp変更">
+      <option name="closed" value="true" />
+      <created>1705284510460</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705284510460</updated>
+    </task>
+    <task id="LOCAL-00006" summary="staticroot追加">
+      <option name="closed" value="true" />
+      <created>1705288906214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705288906214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -90,6 +144,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ブランチ作成のためのコミット" />
-    <option name="LAST_COMMIT_MESSAGE" value="ブランチ作成のためのコミット" />
+    <MESSAGE value="ホワイトノイズ周り構築" />
+    <MESSAGE value="requirements更新" />
+    <MESSAGE value="デバッグ追加" />
+    <MESSAGE value="urlsapp変更" />
+    <MESSAGE value="staticroot追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="staticroot追加" />
   </component>
 </project>

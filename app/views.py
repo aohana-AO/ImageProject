@@ -45,10 +45,10 @@ def image_create(prompt, negative_prompt, image_name ,number):
                 "style_preset": style,
                 "text_prompts": [
                     {
-                        "text": prompt
+                        "text": "figure style, "+prompt
                     },
                     {
-                        "text": negative_prompt,
+                        "text": "illustration, "+negative_prompt,
                         "weight": -1.0
                     }
                 ],
