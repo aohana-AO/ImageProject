@@ -13,7 +13,7 @@ services:
     buildCommand: './build.sh'
     startCommand: 'gunicorn ImageProject.wsgi:application'
     plan: free
-    branch: main
+    branch: feature/deploy
     healthCheckPath: /
     envVars:
       - key: DATABASE_URL
