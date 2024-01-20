@@ -1,0 +1,14 @@
+canvas {
+        border: 2px solid transparent;
+        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+        border-image-slice: 1;
+        display: block;
+        margin: 0 auto; /* Canvasを中央に配置 */
+    }
+/*これだけでcanvasを画面中央に固定できる*/
+#myCanvas{
+        position: fixed;
+        left: 50%;
+        top: 55%; /*50から変更、canvasの位置調整のため*/
+        transform: translate(-50%, -50%);
+    }
